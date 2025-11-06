@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram Feed Bootstrap</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <!-- Styles.css -->
+  <link rel="stylesheet" type="text/css" href="src/styles.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-md bg-body-tertiary ">
+    <div class="container-fluid">
+
+      <!-- Icono + Titulo -->
+      <a class="navbar-brand col-4" href="#">
+        <i class="fa-brands fa-instagram fa-xl"><span> Instagram</span></i>
+      </a>
+
+      <!-- Esconder menu Responsive(menu hamburguesa)-->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Contenido colapsable -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+
+          <!-- Botón + modal -->
+          <li class="nav-item m-2">
+
+            <!-- Botón de modal de nuevo post -->
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalNuevoPost">Crea un nuevo Post</button>
+
+            <!-- Modal del nuevo post -->
+            <div class="modal fade" id="modalNuevoPost" tabindex="-1" aria-labelledby="modalNuevoPostLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalNuevoPostLabel">Crea un nuevo Post</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="mb-3">
+                      <label for="exampleFormControlTextarea1" class="form-label">Post:</label>
+                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Añade aqui tu post..."></textarea>
+                      <button class="btn btn-light border rounded mt-2" title="camera"><i class="fa-solid fa-camera"></i></button>
+                      <button class="btn btn-light border rounded mt-2" title="location "><i class="fa-solid fa-location-dot"></i></button>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary">Cerrar</button>
+                  <button type="button" class="btn btn-success">Publicar</button>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- Boton de Herramientas desplegables -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle bg-secondary rounded text-white" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-gear"></i>
+            </a>
+
+            <!-- Lista de Herramientas desplegables -->
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#">Pefil</a></li>
+              <li><a class="dropdown-item" href="#">Acesibilidad</a></li>
+              <li><a class="dropdown-item" href="#">Datos y Privacidad</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+  <!-- Selector de pestañas -->
+  <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+
+    <!-- Selector Grid -->
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="grid-tab" data-bs-toggle="tab" href="#grid" role="tab" aria-controls="grid"
+        aria-selected="true">
+        <i class="fa-solid fa-table-cells fa-lg"></i>
+      </a>
+    </li>
+
+    <!-- Selector Feed -->
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="feed-tab" data-bs-toggle="tab" href="#feed" role="tab" aria-controls="feed"
+        aria-selected="false">
+        <i class="fa-solid fa-square fa-lg"></i>
+      </a>
+    </li>
+  </ul>
+
+  <!-- Contenido de las pestañas -->
+  <div class="tab-content mt-3">
+
+    <!-- Contenido del Grid -->
+    <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
+      <div class="container text-center">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mb-3">
+        <div class="col"><img src="https://picsum.photos/600?random=1" class="img-fluid w-100 h-100 " alt="Bonita imagen"></div>
+        <div class="col"><img src="https://picsum.photos/600?grayscale&random=1" class="img-fluid w-100 h-100 " alt="Bonita imagen en escala de grises"></div>
+        <div class="col"><img src="https://picsum.photos/600?blur=3&random=1" class="img-fluid w-100 h-100 " alt="Bonita imagen con desenfocado"></div>
+        <div class="col"><img src="https://picsum.photos/600?random=2" class="img-fluid w-100 h-100 " alt="Bonita imagen"></div>
+        <div class="col"><img src="https://picsum.photos/600?grayscale&random=2" class="img-fluid w-100 h-100 " alt="Bonita imagen en escala de grises"></div>
+        <div class="col"><img src="https://picsum.photos/600?blur=3&random=2" class="img-fluid w-100 h-100 " alt="Bonita imagen con desenfocado"></div>
+        <div class="col"><img src="https://picsum.photos/600?random=3" class="img-fluid w-100 h-100 " alt="Bonita imagen"></div>
+        <div class="col"><img src="https://picsum.photos/600?grayscale&random=3" class="img-fluid w-100 h-100 " alt="Bonita imagen en escala de grises"></div>
+        <div class="col"><img src="https://picsum.photos/600?blur=3&random=3" class="img-fluid w-100 h-100 " alt="Bonita imagen con desenfocado"></div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Contenido del Feed -->
+    <div class="tab-pane fade" id="feed" role="tabpanel" aria-labelledby="feed-tab">
+    
+      <!-- 1ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Vivamus vel turpis</h4><span class="text-muted">01/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?random=1"  alt="Bonita imagen">
+        <div class="card-body">
+          <p class="card-text fw-bold">856 Likes</p>
+          <p class="card-text">Aenean viverra lectus ac tellus faucibus iaculis in nec erat. Nam non libero a nibh dictum pellentesque vel eget nibh.</p>
+        </div>
+      </div>
+    
+      <!-- 2ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Nam non libero a nibh dictum</h4><span class="text-muted">02/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?grayscale&random=1" alt="Bonita imagen en escala de grises">
+        <div class="card-body">
+          <p class="card-text fw-bold">56 Likes</p>
+          <p class="card-text">Nam non libero a nibh dictum pellentesque vel eget nibh. Aenean viverra lectus ac tellus faucibus iaculis in nec erat.</p>
+        </div>
+      </div>
+    
+      <!-- 3ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Phasellus in orci dolor</h4><span class="text-muted">03/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?blur=3&random=1" alt="Bonita imagen con desenfocado">
+        <div class="card-body">
+          <p class="card-text fw-bold">56 Likes</p>
+          <p class="card-text">Proin nec malesuada ex, at pharetra enim. Sed mollis elit non leo placerat viverra. In ligula dolor, bibendum a dapibus nec, blandit et ex.</p>
+        </div>
+      </div>
+    
+      <!-- 4ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Suspendisse sodales feugiat</h4><span class="text-muted">04/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?random=2"  alt="Bonita imagen">
+        <div class="card-body">
+          <p class="card-text fw-bold">8576 Likes</p>
+          <p class="card-text">Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+        </div>
+      </div>
+
+      <!-- 5ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Libero a nibh dictum</h4><span class="text-muted">05/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?grayscale&random=2" alt="Bonita imagen en escala de grises">
+        <div class="card-body">
+          <p class="card-text fw-bold">756 Likes</p>
+          <p class="card-text">Nibh dictum pellentesque vel eget nibh. Aenean viverra lectus ac tellus faucibus iaculis in nec erat.</p>
+        </div>
+      </div>
+
+      <!-- 6ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Orci dolor</h4><span class="text-muted">06/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?blur=3&random=2" alt="Bonita imagen con desenfocado">
+        <div class="card-body">
+          <p class="card-text fw-bold">689 Likes</p>
+          <p class="card-text">Sed mollis elit non leo placerat viverra. In ligula dolor, bibendum a dapibus nec, blandit et ex.</p>
+        </div>
+      </div>
+    
+      <!-- 7ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Nunc feugiat lectus et porttitor</h4><span class="text-muted">07/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?random=3"  alt="Bonita imagen">
+        <div class="card-body">
+          <p class="card-text fw-bold">1576 Likes</p>
+          <p class="card-text">Phasellus in orci dolor. Proin nec malesuada ex, at pharetra enim.</p>
+        </div>
+      </div>
+
+      <!-- 8ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Libero a nibh dictum</h4><span class="text-muted">08/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?grayscale&random=3" alt="Bonita imagen en escala de grises">
+        <div class="card-body">
+          <p class="card-text fw-bold">56 Likes</p>
+          <p class="card-text">Dictum pellentesque vel eget nibh. Aenean viverra lectus ac tellus faucibus iaculis in nec erat.</p>
+        </div>
+      </div>
+    
+      <!-- 9ªCard -->
+      <div class="card mx-auto w-75 w-md-50 w-lg-30 mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h4 class="card-title">Aenean viverra lectus</h4><span class="text-muted">06/12</span>
+          </div>
+        </div>
+        <img src="https://picsum.photos/600?blur=3&random=2" alt="Bonita imagen con desenfocado">
+        <div class="card-body">
+          <p class="card-text fw-bold">1689 Likes</p>
+          <p class="card-text">In ligula dolor, bibendum a dapibus nec, blandit et ex. Sed mollis elit non leo placerat viverra.</p>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
